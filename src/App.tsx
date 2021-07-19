@@ -1,12 +1,23 @@
+import React from "react";
+import {BrowserRouter, Route, Switch} from "react-router-dom";
 import './Styles.css';
-import logo from './logo.jpg';
-import {ClickCounter} from "./ClickCounter";
+import Header from "./components/Header/Header";
+import MainSection from "./components/MainSection/MainSection";
+import Footer from "./components/Footer/Footer";
 
-export const App = () => {
-    return <>
-        <h1>Hello world - {process.env.NODE_ENV} {process.env.name}</h1>
-        <img src={logo} alt="logo" width="300" height="200"/>
-        <ClickCounter/>
-    </>
-
+const App = () => {
+    return (
+        <BrowserRouter>
+            <div className='page'>
+                <Header/>
+                <h1>Hello world - {process.env.NODE_ENV} {process.env.name}</h1>
+                <Switch>
+                    <Route exact path='/' component={MainSection}/>
+                </Switch>
+                <Footer/>
+            </div>
+        </BrowserRouter>
+    )
 }
+
+export default App;
