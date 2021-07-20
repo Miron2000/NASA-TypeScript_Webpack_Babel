@@ -1,16 +1,40 @@
-$color:red;
+$colorTitle: #080808;
+$colorHeaderFooter: #f0f8ff;
+$font-family: 'Encode Sans SC', sans-serif;
 
 body {
-    padding: 0;
-    margin: 0;
-}
+  padding: 0;
+  margin: 0;
 
-.page {
+  .page {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+
+    .nasa__img {
+      width: 150px;
+      height: 129px;
+      margin: 0 auto;
+    }
+
+    .title {
+      font-family: $font-family;
+      text-align: center;
+      color: $colorTitle;
+    }
+
+    a {
+      color: $colorHeaderFooter;
+      text-decoration: none;
+      font-family: $font-family;
+      font-size: 1.2rem;
+
+      &:hover {
+        color: red;
+      }
+    }
+  }
 }
 
-h1 {
-    color: $color;
-}
+
+

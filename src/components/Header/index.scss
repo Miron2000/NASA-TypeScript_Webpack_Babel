@@ -1,16 +1,24 @@
+$background: #000 url(http://zornet.ru/Abavaga/stars.png);
+$font-family: 'Encode Sans SC', sans-serif;
+
 .header {
-  background: #000 url(http://zornet.ru/Abavaga/stars.png);
+  background: $background;
   background-size: cover;
   width: 100%;
   height: 5rem;
 
   .header__section {
     display: flex;
+    margin: 9px;
 
     .header__logo {
       width: 63px;
       height: 47px;
       margin-top: 5px;
+    }
+
+    .header_title {
+      margin: 14px;
     }
   }
 }
