@@ -1,7 +1,12 @@
-import React from 'react';
-import './Footer.scss';
+import React, {ReactNode, FC} from 'react';
 
-const FooterIcon = (props) => {
+interface Props {
+    link: string;
+    title: string;
+    icon: ReactNode;
+}
+
+const FooterIcon: FC<Props> = (props) => {
     return (
         <div className="footer__item">
             <a href={props.link} target="_blank">{props.title} <span className="icon">{props.icon}</span></a>
