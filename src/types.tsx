@@ -4,7 +4,7 @@ export interface IMyObject {
 }
 
 export interface ObjRoverCameras {
-    "spirit": IMyObject[],
-    "curiosity": IMyObject[],
-    "opportunity": IMyObject[]
+    'spirit': IMyObject[],
+    'curiosity': IMyObject[],
+    'opportunity': IMyObject[]
 }

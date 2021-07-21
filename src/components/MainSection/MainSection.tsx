@@ -1,80 +1,57 @@
-import React, {useState} from 'react';
-import axios from "axios";
-import SelectMarsRover from "./SelectMarsRover/SelectMarsRover";
-import SelectCamera from "./SelectCamera/SelectCamera";
+// eslint-disable-next-line no-use-before-define
+import React, { useState } from 'react';
+import fetchFoto from '../../fetchFoto';
+import SelectMarsRover from './SelectMarsRover/SelectMarsRover';
+import SelectCamera from './SelectCamera/SelectCamera';
 
 const MainSection: React.FunctionComponent = () => {
-    const [roverChosen, setRoverChosen] = useState<string>("curiosity");
-    const [cameraChosen, setCameraChosen] = useState<string>('');
-    const [marsPhoto, setMarsPhoto] = useState<string>('');
-    const [error, setError] = useState<string>('');
-    const [showPhoto, setShowPhoto] = useState<boolean>(false);
+  const [roverChosen, setRoverChosen] = useState<string>('curiosity');
+  const [cameraChosen, setCameraChosen] = useState<string>('');
+  const [photos, setPhotos] = useState<any[]>([]);
+  // eslint-disable-next-line no-unused-vars,@typescript-eslint/no-unused-vars
+  const [error, setError] = useState<string>('');
+  const [showPhoto, setShowPhoto] = useState<boolean>(false);
 
-    const handleRoverSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setRoverChosen(event.target.value);
-        // console.log(roverChosen, 'roverChosen')
-        // setCameraChosen('');
-    }
+  const handleRoverSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setRoverChosen(event.target.value);
+    // console.log(roverChosen, 'roverChosen')
+    // setCameraChosen('');
+  };
 
-    const handleCameraSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setCameraChosen(event.target.value);
-    }
+  const handleCameraSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setCameraChosen(event.target.value);
+  };
+  const handleSubmit = () => {
+    fetchFoto(roverChosen, cameraChosen, setError, error, setPhotos, setShowPhoto);
+  };
 
-    const handleSubmit = () => {
-        const API_KEY = 'AAQyOYypfA9qSs5C8aRlXI8u2tEXiJCtiGTUfdKR'
-        let apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverChosen}/photos?sol=100&camera=${cameraChosen}&api_key=${API_KEY}`;
+  console.log(photos, 'photos');
+  return (
+  // eslint-disable-next-line react/jsx-filename-extension
+    <section className="section">
+      <div className="section__selects">
+        <div>
+          <SelectMarsRover value={roverChosen} onChangeSelect={handleRoverSelection} />
+        </div>
 
-        axios.get(apiUrl).then((response) => {
-            console.log(response.data);
-            if (response.data.error) {
-                setError(response.data.errors)
-            } else {
-                let imgMarsRover = '';
+        <div>
+          <SelectCamera
+            value={cameraChosen}
+            onChangeSelect={handleCameraSelection}
+            roverChosen={roverChosen}
+          />
+        </div>
+      </div>
+      {/* eslint-disable-next-line max-len */}
+      {/* eslint-disable-next-line react/button-has-type,@typescript-eslint/no-unused-vars,no-shadow */}
+      <button className="btn__section" onClick={handleSubmit}>GO!</button>
 
-                //проверка, возвращаются ли какие-нибудь фотографии
-                if (!!response.data.photos[0]) {
-                    imgMarsRover = response.data.photos[0].img_src;
-                } else {
-                    imgMarsRover = '';
-                }
-                setMarsPhoto(imgMarsRover)
-                setShowPhoto(true);
-            }
-        })
-    }
-
-    const renderImgMarsRover = () => {
-        if (!marsPhoto && showPhoto) {
-            return (
-                <div>
-                    <h2>There is no photo Mars Rover.</h2>
-                    <img src={'https://www.buro247.ru/local/share/images/73445.jpg'}/>
-                </div>
-            )
-        } else {
-            return <img src={marsPhoto}/>
-        }
-    }
-
-    return (
-        <section className='section'>
-            <div className='section__selects'>
-                <div>
-                    <SelectMarsRover value={roverChosen} onChangeSelect={handleRoverSelection}/>
-                </div>
-
-                <div>
-                    <SelectCamera value={cameraChosen} onChangeSelect={handleCameraSelection} roverChosen={roverChosen}/>
-                </div>
-            </div>
-
-            <button className='btn__section' onClick={handleSubmit}>GO!</button>
-
-            <div>
-                {renderImgMarsRover()}
-            </div>
-        </section>
-    );
-}
+      <div>
+        {/* eslint-disable-next-line jsx-a11y/alt-text */}
+        {photos && showPhoto ? photos.map((photo) => <img key={photo.id} src={photo?.img_src} />) : <img className="default__img" src="https://www.buro247.ru/local/share/images/73445.jpg" />}
+      </div>
+    </section>
+  );
+};
 
 export default MainSection;
