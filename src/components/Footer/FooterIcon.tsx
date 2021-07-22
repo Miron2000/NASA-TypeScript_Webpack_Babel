@@ -8,7 +8,7 @@ interface PropsForIcons {
 
 const FooterIcon: FC<PropsForIcons> = ({ link, title, icon }) => (
   <div className="footer__item">
-    <a href={link} target="_blank" rel="noreferrer">
+    <a href={link} target="_blank" rel="noreferrer" className="item">
       {title}
       <span className="icon">{icon}</span>
     </a>

@@ -67,9 +67,17 @@ $font-family: 'Encode Sans SC', sans-serif;
     display: block;
     margin: auto;
   }
+  .photo__marsRover {
+    width: 250px;
+    height: 250px;
+    border-radius: 8px;
+  }
 
   .default__img {
     display: block;
     margin: auto;
+  }
+  .pagination {
+    display: flex;
   }
 }
