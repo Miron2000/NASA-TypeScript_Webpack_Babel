@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-use-before-define
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './style/index.scss';
@@ -8,7 +7,6 @@ import Footer from './components/Footer/Footer';
 import logo from './images/logo.png';
 
 const App: React.FC = () => (
-  // eslint-disable-next-line react/jsx-filename-extension
   <BrowserRouter>
     <div className="page">
       <Header />

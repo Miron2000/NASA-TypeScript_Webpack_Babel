@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-use-before-define
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -8,7 +7,6 @@ import FooterIcon from './FooterIcon';
 
 const Footer = () => {
   const icon = {
-    // eslint-disable-next-line react/jsx-filename-extension
     instagram: <FontAwesomeIcon icon={faInstagram} />,
     telegram: <FontAwesomeIcon icon={faTelegramPlane} />,
     facebook: <FontAwesomeIcon icon={faFacebookF} />,
