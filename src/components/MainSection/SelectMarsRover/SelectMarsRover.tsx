@@ -7,7 +7,7 @@ interface PropsForSelectMarsRover {
 
 const SelectMarsRover: FC<PropsForSelectMarsRover> = ({ value, onChangeSelect }) => (
   <>
-    <p>Choose a Mars rover:</p>
+    <p className="title_mainSection">Choose a Mars rover:</p>
     <div className="select__wrapper">
       <select value={value} onChange={onChangeSelect} className="select">
         <option value="curiosity">Curiosity</option>

@@ -1,9 +1,18 @@
 $font-family: 'Encode Sans SC', sans-serif;
+$btn-background: #26458d;
+$color-white: #FFFFFF;
+$color-red: #da4b1e;
+$color-black: #000000FF;
+$transparent: transparent;
+$cursor-pointer: pointer;
 
 .section {
   .section__selects {
-    display: flex;
-    justify-content: space-evenly;
+
+    .title_mainSection {
+      font-size: 1rem;
+      font-family: $font-family;
+    }
 
     .select__wrapper {
       position: relative;
@@ -14,16 +23,15 @@ $font-family: 'Encode Sans SC', sans-serif;
         appearance: none;
         outline: none;
         font-family: $font-family;
-        width: 100%;
         background-color: #fff;
         border-radius: 6px;
         border: 1px solid #27458d;
         padding: 10px 35px 10px 15px;
-        cursor: pointer;
+        cursor: $cursor-pointer;
 
         &:focus {
           outline: none;
-          box-shadow: 0 0 0 1px black, 0 0 10px red;
+          box-shadow: 0 0 0 1px $color-black, 0 0 10px $color-red;
         }
       }
 
@@ -31,7 +39,6 @@ $font-family: 'Encode Sans SC', sans-serif;
         content: '';
         position: absolute;
         top: 50%;
-        right: 15px;
         transform: translateY(-50%);
         display: block;
         pointer-events: none;
@@ -49,17 +56,17 @@ $font-family: 'Encode Sans SC', sans-serif;
     margin: 40px auto;
     text-transform: uppercase;
     outline: 0;
-    background: #26458d;
-    width: 10%;
+    background: $btn-background;
     border: 0;
+    border-radius: 4px;
     padding: 15px;
-    color: #FFFFFF;
+    color: $color-white;
     font-family: $font-family;
     font-size: 14px;
-    cursor: pointer;
+    cursor: $cursor-pointer;
 
     &:hover {
-      background: #da4b1e;
+      background: $color-red;
     }
   }
 
@@ -67,17 +74,118 @@ $font-family: 'Encode Sans SC', sans-serif;
     display: block;
     margin: auto;
   }
+
   .photo__marsRover {
-    width: 250px;
-    height: 250px;
     border-radius: 8px;
+    margin: auto;
+    display: block;
   }
 
   .default__img {
     display: block;
-    margin: auto;
+    margin: 3rem auto;
   }
+
   .pagination {
     display: flex;
+    justify-content: center;
+
+    #btn__number {
+      border-radius: 5px;
+      cursor: $cursor-pointer;
+      border: 1px solid $color-black;
+      font-size: $font-family;
+      &:hover {
+        background-color: $color-red;
+      }
+    }
+
+    .activeBtn {
+      background-color: $btn-background;
+      color: $color-white;
+    }
+
+    .btn__prev {
+      margin-right: 5px;
+      border-radius: 5px;
+      border: 1px solid $color-black;
+      font-size: $font-family;
+      cursor: $cursor-pointer;
+      background-color: $transparent;
+      &:hover {
+        background-color: $color-red;
+      }
+    }
+
+    .btn__next {
+      margin-left: 4px;
+      border-radius: 5px;
+      border: 1px solid $color-black;
+      font-size: $font-family;
+      cursor: $cursor-pointer;
+      background-color: $transparent;
+      &:hover {
+        background-color: $color-red;
+      }
+    }
+  }
+}
+
+@media (min-width: 500px) {
+  .section {
+    .section__selects {
+      display: flex;
+      justify-content: space-evenly;
+
+      .select__wrapper {
+        .select {
+          width: 100%;
+        }
+
+        &::before {
+          right: 15px;
+        }
+      }
+    }
+
+    .photo__marsRover {
+      height: 350px;
+      width: 500px;
+    }
+
+    .default__img {
+      height: 350px;
+      width: 500px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .section {
+    .section__selects {
+      .title_mainSection {
+        text-align: center;
+      }
+
+      .select__wrapper {
+        .select {
+          margin: auto;
+          display: block;
+          width: 85%;
+        }
+
+        &::before {
+          right: 40px;
+        }
+      }
+    }
+  }
+  .photo__marsRover {
+    height: 205px;
+    width: 275px;
+  }
+  .default__img {
+    height: 205px;
+    width: 275px;
   }
 }
