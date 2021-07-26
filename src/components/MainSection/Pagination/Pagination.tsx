@@ -11,10 +11,10 @@ interface PropsForPagination {
 const Pagination: FC<PropsForPagination> = ({
   photosPerPage, totalPhotos, paginate, currentPage, setCurrentPage,
 }) => {
-  const [pageNumberLimit, setPageNumberLimit] = useState<number>(5);
   const [maxPageNumberLimit, setMaxPageNumberLimit] = useState<number>(5);
   const [minPageNumberLimit, setMinPageNumberLimit] = useState<number>(0);
   const pageNumbers = [];
+  const pageNumberLimit = 5;
 
   for (let i = 1; i <= Math.ceil(totalPhotos / photosPerPage); i++) {
     pageNumbers.push(i);
@@ -38,7 +38,7 @@ const Pagination: FC<PropsForPagination> = ({
     }
   };
 
-  const handlePrevbtn = () => {
+  const handlePrevBtn = () => {
     setCurrentPage(currentPage + 1);
 
     if ((currentPage - 1) % pageNumberLimit === 0) {
@@ -51,7 +51,7 @@ const Pagination: FC<PropsForPagination> = ({
     <div>
       {totalPhotos !== 0 && (
         <ul className="pagination">
-          {totalPhotos > 5 && (<button type="button" className="btn__prev" onClick={handlePrevbtn}>Prev</button>)}
+          {totalPhotos > 5 && (<button type="button" className="btn__prev" onClick={handlePrevBtn}>Prev</button>)}
           {renderPageNumbers}
           {totalPhotos > 5 && (<button type="button" className="btn__next" onClick={handleNextBtn}>Next</button>)}
         </ul>
