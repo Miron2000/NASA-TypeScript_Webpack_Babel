@@ -25,6 +25,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    camelcase: 'off',
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'max-len': ['off', {
       code: 100,
@@ -40,17 +41,13 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'no-unused-vars': 'off',
-    'jsx-a11y/alt-text': [0],
     '@typescript-eslint/no-var-requires': 'off',
     'react/prop-types': 'off',
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
-    'no-console': 'off',
+    'no-plusplus': 0,
     'react/jsx-uses-react': 'off',
-    'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    '@typescript-eslint/no-unused-vars': 'off',
     'import/export': 0,
   },
   settings: {

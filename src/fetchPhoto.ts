@@ -1,7 +1,7 @@
 import axios from 'axios';
 import API_KEY from './config';
 
-const fetchPhoto = (roverChosen: string, cameraChosen: string, setLoading: (arg0: boolean) => void, setError: (arg0: string) => void, error: string, setPhotos: (arg0: []) => void, setShowPhoto: (arg0: boolean) => void) => {
+const fetchPhoto = (roverChosen: string, cameraChosen: string, setLoading: (arg0: boolean) => void, setError: (arg0: string) => void, error: string, setPhotos: (arg0: []) => void) => {
   const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverChosen}/photos?sol=100&camera=${cameraChosen}&api_key=${API_KEY}`;
 
   axios.get(apiUrl).then((response) => {
@@ -15,7 +15,6 @@ const fetchPhoto = (roverChosen: string, cameraChosen: string, setLoading: (arg0
         setPhotos(response.data.photos);
       }
 
-      setShowPhoto(true);
       setLoading(false);
     }
   });

@@ -12,8 +12,6 @@ body {
     min-height: 100vh;
 
     .nasa__img {
-      width: 150px;
-      height: 129px;
       margin: 0 auto;
     }
 
@@ -23,15 +21,46 @@ body {
       color: $colorTitle;
     }
 
-    a {
+    .item {
       color: $colorHeaderFooter;
       text-decoration: none;
       font-family: $font-family;
-      font-size: 1.2rem;
 
       &:hover {
         color: red;
       }
+    }
+  }
+
+}
+
+@media (min-width: 500px) {
+  .page {
+    .nasa__img {
+      width: 150px;
+      height: 129px;
+    }
+
+    .item {
+      font-size: 1.2rem;
+    }
+  }
+
+}
+
+@media (max-width: 500px) {
+  .page {
+    .nasa__img {
+      width: 86px;
+      height: 77px;
+    }
+
+    .title {
+      font-size: 1rem;
+    }
+
+    .item {
+      font-size: 1rem;
     }
   }
 }
