@@ -39,13 +39,10 @@ const MainSection = () => {
 
   const photosPerPage = 1;
   const currentPhoto = photos[currentPage - 1];
-  console.log(photos[currentPage - 1], 'currentPhoto');
 
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
-
-  // console.log(photos, 'photos');
 
   return (
     <section className="section">

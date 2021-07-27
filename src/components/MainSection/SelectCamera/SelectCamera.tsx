@@ -73,14 +73,11 @@ const SelectCamera: FC<PropsForSelectCamera> = ({ value, onChangeSelect, roverCh
     ],
   };
 
-  // roverChosen існує в roverCameras
-  // console.log(roverCameras[roverChosen as keyof ObjRoverCameras], 'roverCameras[roverChosen]')
   return (
     <>
       <p className="title_mainSection">Choose a Camera:</p>
       <div className="select__wrapper">
         <select value={value} onChange={onChangeSelect} className="select">
-          <option value="">Cameras</option>
           {roverCameras[roverChosen as keyof ObjRoverCameras].map((obj) => <option key={obj.abbrev} value={obj.abbrev}>{obj.name}</option>)}
         </select>
       </div>

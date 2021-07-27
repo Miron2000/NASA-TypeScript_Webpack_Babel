@@ -39,7 +39,7 @@ const Pagination: FC<PropsForPagination> = ({
   };
 
   const handlePrevBtn = () => {
-    setCurrentPage(currentPage + 1);
+    setCurrentPage(currentPage - 1);
 
     if ((currentPage - 1) % pageNumberLimit === 0) {
       setMaxPageNumberLimit(maxPageNumberLimit - pageNumberLimit);
@@ -56,7 +56,6 @@ const Pagination: FC<PropsForPagination> = ({
           {totalPhotos > 5 && (<button type="button" className="btn__next" onClick={handleNextBtn}>Next</button>)}
         </ul>
       ) }
-
     </div>
   );
 };
