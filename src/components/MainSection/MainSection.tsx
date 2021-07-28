@@ -7,7 +7,7 @@ import { PhotosArray } from '../../types';
 
 const Preloader = require('../../preloader/preloader.gif');
 
-const MainSection: React.FunctionComponent = () => {
+const MainSection = () => {
   const [roverChosen, setRoverChosen] = useState<string>('curiosity');
   const [cameraChosen, setCameraChosen] = useState<string>('');
   const [photos, setPhotos] = useState<PhotosArray[]>([]);
@@ -15,11 +15,8 @@ const MainSection: React.FunctionComponent = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-
   const handleRoverSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
     setRoverChosen(event.target.value);
-    // console.log(roverChosen, 'roverChosen')
-    // setCameraChosen('');
   };
 
   const handleCameraSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -28,18 +25,24 @@ const MainSection: React.FunctionComponent = () => {
 
   const handleSubmit = () => {
     setLoading(true);
-    fetchPhoto(roverChosen, cameraChosen, setLoading, setError, error, setPhotos);
+    fetchPhoto(roverChosen, cameraChosen)
+      .then((res: { error: React.SetStateAction<string>; photos: React.SetStateAction<PhotosArray[]>; }) => {
+        if (res?.error) {
+          setError(res.error);
+          console.error(error);
+          return;
+        }
+        setPhotos(res.photos);
+        setLoading(false);
+      });
   };
 
   const photosPerPage = 1;
   const currentPhoto = photos[currentPage - 1];
-  console.log(currentPhoto, 'currentPhoto');
 
   const paginate = (pageNumber: number) => {
     setCurrentPage(pageNumber);
   };
-
-  console.log(photos, 'photos');
 
   return (
     <section className="section">
