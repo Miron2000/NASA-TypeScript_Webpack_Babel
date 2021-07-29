@@ -6,26 +6,36 @@ import {
 import FooterIcon from './FooterIcon';
 
 const Footer = () => {
-  const icon = {
-    instagram: <FontAwesomeIcon icon={faInstagram} />,
-    telegram: <FontAwesomeIcon icon={faTelegramPlane} />,
-    facebook: <FontAwesomeIcon icon={faFacebookF} />,
-    twitter: <FontAwesomeIcon icon={faTwitter} />,
-  };
-  const link = {
-    facebook: 'https://ru-ru.facebook.com/NASA/',
-    instagram: 'https://www.instagram.com/nasa/',
-    telegram: 'https://telegram.me/s/NASA_gov1?before=210',
-    twitter: 'https://twitter.com/nasa',
-  };
+  const icons = [
+    {
+      title: 'Facebook',
+      icon: <FontAwesomeIcon icon={faFacebookF} />,
+      link: 'https://ru-ru.facebook.com/NASA/',
+    },
+    {
+      title: 'Instagram',
+      icon: <FontAwesomeIcon icon={faInstagram} />,
+      link: 'https://www.instagram.com/nasa/',
+    },
+    {
+      title: 'Telegram',
+      icon: <FontAwesomeIcon icon={faTelegramPlane} />,
+      link: 'https://telegram.me/s/NASA_gov1?before=210',
+    },
+    {
+      title: 'Twitter',
+      icon: <FontAwesomeIcon icon={faTwitter} />,
+      link: 'https://twitter.com/nasa',
+    },
+
+  ];
 
   return (
     <footer className="footer">
       <div className="footer__section">
-        <FooterIcon title="Facebook" icon={icon.facebook} link={link.facebook} />
-        <FooterIcon title="Telegram" icon={icon.telegram} link={link.telegram} />
-        <FooterIcon title="Instagram" icon={icon.instagram} link={link.instagram} />
-        <FooterIcon title="Twitter" icon={icon.twitter} link={link.twitter} />
+        {icons.map((icon) => (
+          <FooterIcon title={icon.title} icon={icon.icon} link={icon.link} />
+        ))}
       </div>
     </footer>
   );
