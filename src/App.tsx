@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './style/index.scss';
 import Header from './components/Header/Header';
 import MainSection from './components/MainSection/MainSection';
+import AstronomyPicture from './components/AstronomySection/AstronomyPicture';
 import Footer from './components/Footer/Footer';
 import logo from './images/logo.png';
 
@@ -18,6 +19,7 @@ const App: React.FC = () => (
       <img className="nasa__img" src={logo} alt="logo" />
       <Switch>
         <Route exact path="/" component={MainSection} />
+        <Route exact path="/apod" component={AstronomyPicture} />
       </Switch>
       <Footer />
     </div>
