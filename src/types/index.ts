@@ -32,3 +32,10 @@ export interface PhotosArray {
     rover: RoverObj,
     sol: number,
 }
+
+export interface ApiApods {
+    'date': string;
+    'explanation': string;
+    'title': string;
+    'url': string;
+}

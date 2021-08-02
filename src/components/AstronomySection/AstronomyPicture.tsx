@@ -1,20 +1,20 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
-import useFetch from '../../hooks/useFetch';
+import useGetApiApod from '../../hooks/useGetApiApod';
 
 const Preloader = require('../../images/preloader.gif');
 
 const AstronomyPicture = () => {
+  const apodFetchResponse = useGetApiApod();
   const history = useHistory();
-  const apodFetchResponse = useFetch(null);
 
-  if (!apodFetchResponse.apod || apodFetchResponse.loading) {
+  if (!apodFetchResponse?.date) {
     return <img className="preloader" src={Preloader} alt="preloader" />;
   }
 
   const {
     date, explanation, title, url,
-  } = apodFetchResponse.apod;
+  } = apodFetchResponse;
 
   return (
     <div>

@@ -49,6 +49,7 @@ module.exports = {
     'react/jsx-uses-react': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'import/export': 0,
+    'react-hooks/exhaustive-deps': 'off',
   },
   settings: {
     'import/resolver': {
