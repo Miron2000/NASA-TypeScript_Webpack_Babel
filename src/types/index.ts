@@ -34,8 +34,8 @@ export interface PhotosArray {
 }
 
 export interface ApiApods {
-    'date': string;
-    'explanation': string;
-    'title': string;
-    'url': string;
+    date: string;
+    explanation: string;
+    title: string;
+    url: string;
 }
