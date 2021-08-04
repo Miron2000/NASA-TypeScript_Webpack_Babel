@@ -13,14 +13,11 @@ async function getApod() {
 // генераторы
 export function* loadApod() {
   const data: ApiApods = yield call(getApod);
-  yield put({ type: 'SET_APOD', payload: data });
-  console.log('Loaded Apod');
+  yield put({ type: 'SET_APOD_SUCCES', payload: data });
 }
 
 export function* workerSaga() {
-  console.log('run async');
   yield fork(loadApod);
-  console.log('end async');
 }
 
 export function* watchLoadDataSaga() {

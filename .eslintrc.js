@@ -44,6 +44,8 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 'off',
     'react/prop-types': 'off',
     'no-use-before-define': 'off',
+    'no-shadow': 'off',
+    'import/prefer-default-export': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     'no-plusplus': 0,
     'default-case': 0,
