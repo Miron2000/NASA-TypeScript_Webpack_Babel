@@ -1,40 +1,20 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import _ from 'lodash';
-import { ApiApods } from '../../types';
+import useGetApiApod from '../../hooks/useGetApiApod';
 
 const Preloader = require('../../images/preloader.gif');
 
 const AstronomyPicture = () => {
-  // const apodFetchResponse = useGetApiApod();
+  const apodFetchResponse = useGetApiApod();
   const history = useHistory();
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch({ type: 'LOAD_DATE' });
-  }, []);
-
-  const data: ApiApods = useSelector((state: { apod: ApiApods }) => state.apod);
-  const loading = useSelector((state: {loading: boolean}) => state.loading);
-  console.log(data, 'data');
-  console.log(loading, 'loading');
-
-  if (loading) {
+  if (!apodFetchResponse?.date) {
     return <img className="preloader" src={Preloader} alt="preloader" />;
   }
 
   const {
     date, explanation, title, url,
-  } = data;
-
-  // if (!apodFetchResponse?.date) {
-  //   return <img className="preloader" src={Preloader} alt="preloader" />;
-  // }
-  //
-  // const {
-  //   date, explanation, title, url,
-  // } = apodFetchResponse;
+  } = apodFetchResponse;
 
   return (
     <div>

@@ -5,7 +5,7 @@ import API_KEY from '../../config';
 import { ApiApods } from '../../types';
 
 async function getApod() {
-  const request = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${API_KEY}`);
+  const request = await fetch(`https://api.nasa.gov/techtransfer/patent/?engine&api_key=${API_KEY}`);
   const data = await request.json();
   return data;
 }
@@ -13,7 +13,7 @@ async function getApod() {
 // генераторы
 export function* loadApod() {
   const data: ApiApods = yield call(getApod);
-  yield put({ type: 'SET_APOD_SUCCES', payload: data });
+  yield put({ type: 'SET_TECHTRANSFER_SUCCES', payload: data });
 }
 
 export function* workerSaga() {

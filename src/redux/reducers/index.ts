@@ -1,28 +1,22 @@
-import { ApiApods } from '../../types';
 import * as type from '../actionTypes';
 
 const initialState = {
-  apod: {
-    date: '',
-    explanation: '',
-    title: '',
-    url: '',
-  },
+  techTransfer: {},
   loading: true,
 };
 
-export default function appReducer(state = initialState, action: { type: string; payload: ApiApods }) {
+export default function appReducer(state = initialState, action: { type: string; payload: any }) {
   switch (action.type) {
-    case type.SET_APOD:
+    case type.SET_TECHTRANSFER:
       return {
         ...state,
         loading: true,
       };
-    case type.SET_APOD_SUCCES:
+    case type.SET_TECHTRANSFER_SUCCES:
       return {
         ...state,
         loading: false,
-        apod: action.payload,
+        techTransfer: action.payload,
       };
     default:
       return state;
