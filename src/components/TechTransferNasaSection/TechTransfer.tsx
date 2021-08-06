@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { ApiApods } from '../../types';
 import CardsTechTransfer from './CardsTechTransfer';
 
 const Preloader = require('../../images/preloader.gif');
@@ -15,7 +14,7 @@ const TechTransfer = () => {
   }, []);
 
   const data = useSelector((state: any) => state.techTransfer.results);
-  const loading = useSelector((state: {loading: boolean}) => state.loading);
+  const loading = useSelector((state: { loading: boolean }) => state.loading);
   console.log(data, 'data');
 
   if (loading) {
@@ -25,10 +24,12 @@ const TechTransfer = () => {
   return (
     <div>
       <button type="button" className="apod__btn" onClick={() => history.push('/')}>&#8592;</button>
-      <div className="container">
-        { data?.map((item: any) => (
-          <CardsTechTransfer name={item['1']} title={item['2']} abbr={item['9']} img={item['10']} />
-        ))}
+      <div className="container__cards">
+        <div className="container">
+          {data?.map((item: any) => (
+            <CardsTechTransfer name={item['1']} title={item['2']} abbr={item['9']} img={item['10']} />
+          ))}
+        </div>
       </div>
     </div>
   );

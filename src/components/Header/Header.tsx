@@ -6,9 +6,9 @@ const Header = () => (
   <header className="header">
     <div className="header__section">
       <img className="header__logo" src={logo} alt="logo" />
-      <div className="header__title"><NavLink className="item" to="/">NASA Cards</NavLink></div>
+      <div className="header__title"><NavLink className="item" to="/">Mars Rover Photos</NavLink></div>
       <div className="header__title"><NavLink className="item" to="/apod">APOD</NavLink></div>
-      <div className="header__title"><NavLink className="item" to="/tech">TechTransfer</NavLink></div>
+      <div className="header__title"><NavLink className="item" to="/tech">NASA Cards</NavLink></div>
     </div>
   </header>
 );
