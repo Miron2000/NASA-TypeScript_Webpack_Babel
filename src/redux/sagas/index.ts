@@ -13,7 +13,7 @@ async function getApod() {
 // генераторы
 export function* loadApod() {
   const data: ApiApods = yield call(getApod);
-  yield put({ type: 'SET_TECHTRANSFER_SUCCES', payload: data });
+  yield put({ type: 'SET_TECHTRANSFER_SUCCESS', payload: data });
 }
 
 export function* workerSaga() {

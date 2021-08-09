@@ -2,9 +2,9 @@ import React, { FC } from 'react';
 import { ObjRoverCameras } from '../../../types';
 
 interface PropsForSelectCamera {
-  roverChosen: string;
-  value: string;
-  onChangeSelect: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+  roverChosen?: string;
+  value?: string;
+  onChangeSelect?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
 
 const SelectCamera: FC<PropsForSelectCamera> = ({ value, onChangeSelect, roverChosen }) => {
@@ -77,7 +77,7 @@ const SelectCamera: FC<PropsForSelectCamera> = ({ value, onChangeSelect, roverCh
     <>
       <p className="title_mainSection">Choose a Camera:</p>
       <div className="select__wrapper">
-        <select value={value} onChange={onChangeSelect} className="select">
+        <select value={value} onChange={onChangeSelect} className="select" data-testid="selectCamera__MainSection">
           {roverCameras[roverChosen as keyof ObjRoverCameras].map((obj) => <option key={obj.abbrev} value={obj.abbrev}>{obj.name}</option>)}
         </select>
       </div>

@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 
-const Preloader = require('../../images/preloader.gif');
+const preloaderForImg = require('../../images/preloaderForImg.gif');
 
 interface TechTransferProps {
   name: string;
@@ -19,7 +19,7 @@ const CardsTechTransfer: FC<TechTransferProps> = ({
       <div className="bloc__img">
         {loadingImg ? null
           : (
-            <img key={name} src={`http://via.placeholder.com/600x800?text=${encodeURIComponent(name)}`} alt={name} />
+            <img className="preloader" src={preloaderForImg} alt="preloader" />
           )}
         <img
           style={loadingImg ? {} : { display: 'none' }}

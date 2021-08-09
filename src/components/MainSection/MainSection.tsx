@@ -34,6 +34,7 @@ const MainSection = () => {
 
   return (
     <section className="section">
+      <h3 data-testid="header__MainSection">Mars Rover Photos</h3>
       <div className="section__selects">
         <div>
           <SelectMarsRover value={roverChosen} onChangeSelect={(e) => setRoverChosen(e?.target?.value)} />
@@ -47,7 +48,7 @@ const MainSection = () => {
           />
         </div>
       </div>
-      <button type="button" className="btn__section" onClick={handleSubmit}>GO!</button>
+      <button type="button" className="btn__section" onClick={handleSubmit} data-testid="btn__MainSection">GO!</button>
 
       {loading ? <img className="preloader" src={Preloader} alt="preloader" /> : null}
 

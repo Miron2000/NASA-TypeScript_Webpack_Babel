@@ -7,12 +7,12 @@ const initialState = {
 
 export default function appReducer(state = initialState, action: { type: string; payload: any }) {
   switch (action.type) {
-    case type.SET_TECHTRANSFER:
+    case type.TECH_TRANSFER:
       return {
         ...state,
         loading: true,
       };
-    case type.SET_TECHTRANSFER_SUCCES:
+    case type.SET_TECHTRANSFER_SUCCESS:
       return {
         ...state,
         loading: false,
