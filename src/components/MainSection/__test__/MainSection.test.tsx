@@ -1,5 +1,5 @@
 import React from 'react';
-import { getByTestId, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import MainSection from '../MainSection';
 import SelectCamera from '../SelectCamera/SelectCamera';
@@ -21,8 +21,15 @@ test('header renders with correct text', () => {
 test('select SelectMarsRover contains initial value text', () => {
   const { getByTestId } = render(<SelectMarsRover />);
 
-  const selectEl = (document.getElementById('selectMarsRover__MainSection') as HTMLInputElement).value;
+  const selectEl = (getByTestId('selectMarsRover__MainSection') as HTMLInputElement).value;
   expect(selectEl).toBe('curiosity');
+});
+
+test('select SelectCamera contains initial value text', () => {
+  const { getByTestId } = render(<SelectCamera />);
+
+  const selectEl = (getByTestId('selectCamera__MainSection') as HTMLInputElement).value;
+  expect(selectEl).toBe('');
 });
 
 test('button renders with GO!', () => {
@@ -30,4 +37,17 @@ test('button renders with GO!', () => {
   const btn = component.getByTestId('btn__MainSection');
 
   expect(btn.textContent).toBe('GO!');
+});
+
+test('change value of select works correctly', () => {
+  const { getByTestId } = render(<SelectMarsRover />);
+  const selectEl = getByTestId('selectMarsRover__MainSection');
+  const selectElValue = (getByTestId('selectMarsRover__MainSection') as HTMLInputElement).value;
+  fireEvent.change(selectEl, {
+    target: {
+      value: 'opportunity',
+    },
+  });
+
+  expect(selectElValue).toBe('opportunity');
 });
