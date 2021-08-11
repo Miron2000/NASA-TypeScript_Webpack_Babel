@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { ObjRoverCameras } from '../../../types';
 
 interface PropsForSelectCamera {
-  roverChosen?: string;
+  roverChosen: string;
   value?: string;
   onChangeSelect?: (event: React.ChangeEvent<HTMLSelectElement>) => void;
 }
