@@ -41,6 +41,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     '@typescript-eslint/no-var-requires': 'off',
     'react/prop-types': 'off',
     'no-use-before-define': 'off',

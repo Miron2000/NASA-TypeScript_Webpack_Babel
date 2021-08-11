@@ -14,7 +14,7 @@ const App: React.FC = () => {
 
   return (
     <BrowserRouter>
-      <div className={darkMode ? 'dark-mode' : 'light-mode'}>
+      <div className={darkMode ? 'dark-mode' : 'light-mode'} data-testid="darkModeApp">
         <div className="page">
           <Header />
           <Toggle setDarkMode={setDarkMode} darkMode={darkMode} />

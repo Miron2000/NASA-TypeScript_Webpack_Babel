@@ -15,6 +15,7 @@ const Toogle: FC<ToogleProps> = ({ setDarkMode, darkMode }) => (
           onChange={() => {
             setDarkMode(!darkMode);
           }}
+          data-testid="toggle-theme-input"
         />
         {darkMode ? <span className="checked round"> </span> : <span className="notChecked round"> </span>}
       </label>
