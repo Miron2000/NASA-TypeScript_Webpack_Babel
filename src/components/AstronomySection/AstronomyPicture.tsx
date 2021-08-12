@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import useGetApiApod from '../../hooks/useGetApiApod';
 
 const Preloader = require('../../images/preloader.gif');
+const preloaderForImg = require('../../images/preloaderForImg.gif');
 
 const AstronomyPicture = () => {
+  const [loadingImg, setLoadingImg] = useState<boolean>(false);
   const apodFetchResponse = useGetApiApod();
   const history = useHistory();
 
@@ -26,7 +28,17 @@ const AstronomyPicture = () => {
         </div>
         <div className="apod__explanation">{explanation}</div>
         <div>
-          <img className="apod__img" src={url} alt={url} />
+          {loadingImg ? null
+            : (
+              <img className="preloader" src={preloaderForImg} alt="preloader" />
+            )}
+          <img
+            className="apod__img"
+            src={url}
+            alt={url}
+            style={loadingImg ? {} : { display: 'none' }}
+            onLoad={() => setLoadingImg(true)}
+          />
         </div>
       </div>
     </div>

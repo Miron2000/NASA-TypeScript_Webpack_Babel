@@ -13,9 +13,11 @@ Object {
         >
           <label
             class="switch"
+            for="input-toogle"
           >
             <input
               data-testid="toggle-theme-input"
+              id="input-toogle"
               type="checkbox"
             />
             <span
@@ -37,9 +39,11 @@ Object {
       >
         <label
           class="switch"
+          for="input-toogle"
         >
           <input
             data-testid="toggle-theme-input"
+            id="input-toogle"
             type="checkbox"
           />
           <span

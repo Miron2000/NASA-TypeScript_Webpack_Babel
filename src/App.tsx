@@ -10,7 +10,8 @@ import logo from './images/logo.png';
 import Toggle from './components/Toggle/Toggle';
 
 const App: React.FC = () => {
-  const [darkMode, setDarkMode] = useState<boolean>(false);
+  const getDarkMode = () => JSON.parse(localStorage.getItem('darkMode') as string) || false;
+  const [darkMode, setDarkMode] = useState<boolean>(getDarkMode());
 
   return (
     <BrowserRouter>
