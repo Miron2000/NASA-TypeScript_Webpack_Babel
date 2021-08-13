@@ -1,0 +1,24 @@
+$color-blue: #26458d;
+$color-red: #CB0518FF;
+
+.toggle__container {
+  .react-switch-bg {
+    width: 54px !important;
+    height: 24px !important;
+  }
+  .react-switch-handle {
+    height: 22px !important;
+    width: 22px !important;
+    &:hover {
+      background: $color-red !important;
+    }
+  }
+}
+
+
+
+
+
+
+
+

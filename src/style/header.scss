@@ -6,6 +6,8 @@ $font-family: 'Encode Sans SC', sans-serif;
   background-size: cover;
   width: 100%;
   height: 5rem;
+  display: flex;
+  justify-content: space-between;
 
   .header__section {
     display: flex;
@@ -20,6 +22,11 @@ $font-family: 'Encode Sans SC', sans-serif;
     .header__title {
       margin: 14px;
     }
+  }
+
+  .toggle__header {
+    margin-top: 22px;
+    margin-right: 24px;
   }
 }
 
