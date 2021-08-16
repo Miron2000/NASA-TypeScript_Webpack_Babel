@@ -1,4 +1,4 @@
-const puppeteer = require('puppeteer');
+import puppeteer from 'puppeteer';
 
 // проверка или в App.ts содержит в клссе .title -> h1 'NASA-developmentDev'
 describe('on page load', () => {
