@@ -18,22 +18,53 @@ $font-family: 'Encode Sans SC', sans-serif;
   display: block;
   margin: auto;
 }
+
 .apod__container {
   .apod__title {
     text-align: center;
     font-family: $font-family;
   }
-  .apod__explanation{
-    width: 50%;
+
+  .apod__explanation {
     text-align: center;
     display: block;
     margin: auto;
     font-family: $font-family;
   }
+
   .apod__img {
-    height: 350px;
-    width: 458px;
     display: block;
     margin: 3rem auto;
+  }
+}
+
+@media (min-width: 500px) {
+  .apod__container {
+    .apod__explanation {
+      width: 50%;
+    }
+
+    .apod__img {
+      height: 350px;
+      width: 458px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .apod__container {
+    .apod__title {
+      font-size: 0.7rem;
+    }
+
+    .apod__explanation {
+      width: 90%;
+      font-size: 0.5rem;
+    }
+
+    .apod__img {
+      height: 205px;
+      width: 275px;
+    }
   }
 }

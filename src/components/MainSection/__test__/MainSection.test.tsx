@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  fireEvent, render, screen, findAllByRole, cleanup, act,
+  fireEvent, render, screen, act,
 } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import MainSection from '../MainSection';

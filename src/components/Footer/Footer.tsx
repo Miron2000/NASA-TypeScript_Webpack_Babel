@@ -34,7 +34,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__section">
         {icons.map((icon) => (
-          <FooterIcon title={icon.title} icon={icon.icon} link={icon.link} />
+          <FooterIcon key={icon.title} title={icon.title} icon={icon.icon} link={icon.link} />
         ))}
       </div>
     </footer>

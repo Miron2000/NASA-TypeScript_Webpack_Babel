@@ -11,6 +11,7 @@ $cursor-pointer: pointer;
     font-family: $font-family;
     text-align: center;
   }
+
   .section__selects {
 
     .title_mainSection {
@@ -99,6 +100,7 @@ $cursor-pointer: pointer;
       cursor: $cursor-pointer;
       border: 1px solid $color-black;
       font-size: $font-family;
+
       &:hover {
         background-color: $color-red;
       }
@@ -116,6 +118,7 @@ $cursor-pointer: pointer;
       font-size: $font-family;
       cursor: $cursor-pointer;
       background-color: $transparent;
+
       &:hover {
         background-color: $color-red;
       }
@@ -128,6 +131,7 @@ $cursor-pointer: pointer;
       font-size: $font-family;
       cursor: $cursor-pointer;
       background-color: $transparent;
+
       &:hover {
         background-color: $color-red;
       }

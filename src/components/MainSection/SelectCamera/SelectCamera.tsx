@@ -77,7 +77,7 @@ const SelectCamera: FC<PropsForSelectCamera> = ({ value, onChangeSelect, roverCh
     <>
       <p className="title_mainSection">Choose a Camera:</p>
       <div className="select__wrapper">
-        <select value={value} onChange={onChangeSelect} className="select" data-testid="selectCamera__MainSection">
+        <select value={value} onChange={onChangeSelect} className="select select__camera" data-testid="selectCamera__MainSection">
           {roverCameras[roverChosen as keyof ObjRoverCameras].map((obj) => <option key={obj.abbrev} value={obj.abbrev}>{obj.name}</option>)}
         </select>
       </div>

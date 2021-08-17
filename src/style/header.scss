@@ -6,19 +6,55 @@ $font-family: 'Encode Sans SC', sans-serif;
   background-size: cover;
   width: 100%;
   height: 5rem;
+  display: flex;
+  justify-content: space-between;
 
   .header__section {
     display: flex;
-    margin: 9px;
 
     .header__logo {
       width: 63px;
       height: 47px;
       margin-top: 5px;
     }
+  }
+}
 
-    .header__title {
-      margin: 14px;
+@media (min-width: 500px) {
+  .header {
+    .header__section {
+      margin: 9px;
+
+      .header__title {
+        margin: 14px;
+      }
+    }
+
+    .toggle__header {
+      margin-top: 22px;
+      margin-right: 24px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .header {
+    .header__section {
+      margin: 5px;
+
+      .header__title {
+        margin-left: 10px;
+        margin-top: 19px;
+
+        .item {
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    .toggle__header {
+      margin-top: 22px;
+      margin-right: 11px;
     }
   }
 }
