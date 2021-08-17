@@ -7,6 +7,7 @@ interface TechTransferProps {
   title: string;
   img: string;
   abbr: string;
+  key?: string;
 }
 
 const CardsTechTransfer: FC<TechTransferProps> = ({

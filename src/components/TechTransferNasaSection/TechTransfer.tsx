@@ -15,7 +15,6 @@ const TechTransfer = () => {
 
   const data = useSelector((state: any) => state.techTransfer.results);
   const loading = useSelector((state: { loading: boolean }) => state.loading);
-  console.log(data, 'data');
 
   if (loading) {
     return <img className="preloader" src={Preloader} alt="preloader" />;
@@ -27,7 +26,7 @@ const TechTransfer = () => {
       <div className="container__cards">
         <div className="container">
           {data?.map((item: any) => (
-            <CardsTechTransfer name={item['1']} title={item['2']} abbr={item['9']} img={item['10']} />
+            <CardsTechTransfer key={item['0']} name={item['1']} title={item['2']} abbr={item['9']} img={item['10']} />
           ))}
         </div>
       </div>
