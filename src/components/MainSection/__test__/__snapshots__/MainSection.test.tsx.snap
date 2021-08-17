@@ -26,7 +26,7 @@ Object {
               class="select__wrapper"
             >
               <select
-                class="select"
+                class="select select__marsRover"
                 data-testid="selectMarsRover__MainSection"
               >
                 <option
@@ -57,7 +57,7 @@ Object {
               class="select__wrapper"
             >
               <select
-                class="select"
+                class="select select__camera"
                 data-testid="selectCamera__MainSection"
               >
                 <option
@@ -101,13 +101,9 @@ Object {
         >
           GO!
         </button>
-        <div>
-          <img
-            alt="default"
-            class="default__img"
-            src="https://www.buro247.ru/local/share/images/73445.jpg"
-          />
-        </div>
+        <div
+          class="result__block-img"
+        />
         <div />
       </section>
     </div>
@@ -134,7 +130,7 @@ Object {
             class="select__wrapper"
           >
             <select
-              class="select"
+              class="select select__marsRover"
               data-testid="selectMarsRover__MainSection"
             >
               <option
@@ -165,7 +161,7 @@ Object {
             class="select__wrapper"
           >
             <select
-              class="select"
+              class="select select__camera"
               data-testid="selectCamera__MainSection"
             >
               <option
@@ -209,13 +205,9 @@ Object {
       >
         GO!
       </button>
-      <div>
-        <img
-          alt="default"
-          class="default__img"
-          src="https://www.buro247.ru/local/share/images/73445.jpg"
-        />
-      </div>
+      <div
+        class="result__block-img"
+      />
       <div />
     </section>
   </div>,

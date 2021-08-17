@@ -33,3 +33,25 @@ test('Header section loads correctly', async () => {
   expect(listItems.length).toBe(4);
   await browser.close();
 });
+
+test('Verifying that the Mars Rover Photos page works correctly', async () => {
+  const browser = await puppeteer.launch({});
+  const page = await browser.newPage();
+  await page.goto('http://localhost:8080/');
+
+  const selectMarsRover = '.select__marsRover';
+  const selectCamera = '.select__camera';
+  const btn = '.btn__section';
+  const blockImg = '.result__block-img';
+
+  await page.click(selectMarsRover);
+  await page.click(selectCamera);
+  await page.click(btn);
+
+  setTimeout(() => {
+    const imageEl = document.getElementsByClassName('photo__marsRover')[0].getAttribute('src');
+    expect(blockImg).toBe(imageEl);
+  }, 1000);
+
+  await browser.close();
+});

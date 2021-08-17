@@ -51,9 +51,8 @@ const MainSection = () => {
       <button type="button" className="btn__section" onClick={handleSubmit} data-testid="btn__MainSection">GO!</button>
 
       {loading ? <img className="preloader" src={Preloader} alt="preloader" /> : null}
-
-      <div>
-        {photos && currentPhoto ? <img className="photo__marsRover" key={currentPhoto?.id} src={currentPhoto?.img_src} alt="marsRover" /> : <img className="default__img" src="https://www.buro247.ru/local/share/images/73445.jpg" alt="default" />}
+      <div className="result__block-img">
+        {currentPhoto && <img className="photo__marsRover" key={currentPhoto?.id} src={currentPhoto?.img_src} alt="marsRover" /> }
       </div>
       <Pagination photosPerPage={photosPerPage} totalPhotos={photos.length} paginate={(pageNumber: number) => setCurrentPage(pageNumber)} currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </section>
