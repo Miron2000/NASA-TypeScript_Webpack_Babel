@@ -81,11 +81,11 @@ global.fetch = jest.fn(() => Promise.resolve({
 
 // Тест на проверку Запроса АПИ (fetch)
 test('Fetches and displays data', async () => {
-  await act(async () => render(<MainSection />));
+  render(<MainSection />);
   expect(screen.getByText('Front Hazard Avoidance Camera')).toBeInTheDocument();
 });
 
-// Тест на проверку меняется ли value у select c SelectMarsRover
+// Тест на проверку меняется value у select c SelectMarsRover
 test('Change on select', async () => {
   act(async () => {
     const { getByTestId } = render(<SelectMarsRover />);
