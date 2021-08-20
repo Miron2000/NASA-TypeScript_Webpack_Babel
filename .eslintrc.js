@@ -26,7 +26,7 @@ module.exports = {
   ],
   rules: {
     camelcase: 'off',
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
+    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'max-len': ['off', {
       code: 100,
       ignoreUrls: true,

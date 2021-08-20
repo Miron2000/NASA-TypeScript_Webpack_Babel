@@ -2,12 +2,6 @@ import React from 'react';
 import '@testing-library/jest-dom/extend-expect';
 import { fireEvent, render } from '@testing-library/react';
 import App from '../../../App';
-import ThemeToggle from '../ThemeToggle';
-
-// test('Toggle snapshot', async () => {
-//   const component = render(<ThemeToggle />);
-//   expect(component).toMatchSnapshot();
-// });
 
 // По дефолту какой стиль стоит
 test('renders with light mode default', () => {

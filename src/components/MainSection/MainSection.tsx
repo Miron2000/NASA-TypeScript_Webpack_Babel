@@ -21,7 +21,7 @@ const MainSection = () => {
       .then((res: { error: React.SetStateAction<string>; photos: React.SetStateAction<PhotosArray[]>; }) => {
         if (res?.error) {
           setError(res.error);
-          console.error(error);
+          throw new Error(error);
           return;
         }
         setPhotos(res.photos);
