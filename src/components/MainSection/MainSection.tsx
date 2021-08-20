@@ -15,6 +15,7 @@ const MainSection = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [currentPage, setCurrentPage] = useState<number>(1);
 
+  const [test, setTest] = useState<number>('d');
   const handleSubmit = () => {
     setLoading(true);
     fetchPhoto(roverChosen, cameraChosen)
