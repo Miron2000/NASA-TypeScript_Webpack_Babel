@@ -1,5 +1,3 @@
-
-
 export interface IMyObject {
     abbrev: string,
     name: string
