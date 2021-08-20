@@ -49,7 +49,6 @@ const MainSection = () => {
         </div>
       </div>
       <button type="button" className="btn__section" onClick={handleSubmit} data-testid="btn__MainSection">GO!</button>
-
       {loading ? <img className="preloader" src={Preloader} alt="preloader" /> : null}
       <div className="result__block-img">
         {currentPhoto && <img className="photo__marsRover" key={currentPhoto?.id} src={currentPhoto?.img_src} alt="marsRover" /> }
