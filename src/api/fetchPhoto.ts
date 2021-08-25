@@ -1,5 +1,5 @@
 import axios from 'axios';
-import API_KEY from '../config';
+import { API_KEY } from '../config';
 
 const fetchPhoto = (roverChosen: string, cameraChosen: string) => {
   const apiUrl = `https://api.nasa.gov/mars-photos/api/v1/rovers/${roverChosen}/photos?sol=100&camera=${cameraChosen}&api_key=${API_KEY}`;

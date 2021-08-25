@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import _ from 'lodash';
-import API_KEY from '../config';
+import { API_KEY } from '../config';
 import { ApiApods } from '../types';
 
 const useGetApiApod = () => {
