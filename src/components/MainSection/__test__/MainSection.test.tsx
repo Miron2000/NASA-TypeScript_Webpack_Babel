@@ -87,11 +87,11 @@ test('Fetches and displays data', async () => {
 
 // Тест на проверку меняется value у select c SelectMarsRover
 test('Change on select', async () => {
-  act(async () => {
+  await act(async () => {
     const { getByTestId } = render(<SelectMarsRover />);
     const select = getByTestId('selectMarsRover__MainSection');
     const selectElValue = (getByTestId('selectMarsRover__MainSection') as HTMLInputElement).value;
-    const selectWord = 'Opportunity';
+    const selectWord = 'curiosity';
     fireEvent.change(select, { target: { value: 'selectWord' } });
     expect(selectElValue).toBe(selectWord);
   });
